@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ayushi By Saksham ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,600;1,400;1,600&family=Poppins:wght=400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: linear-gradient(135deg, #0b001a, #1a0033, #2b004d); min-height: 100vh; display: flex; justify-content: center; align-items: center; overflow-x: hidden; font-family: 'Poppins', sans-serif; color: #fff; padding: 40px 0; }
+        .container { background: rgba(18, 5, 36, 0.9); padding: 35px 25px; border-radius: 24px; box-shadow: 0 0 45px rgba(157, 0, 255, 0.4); text-align: center; max-width: 500px; width: 95%; backdrop-filter: blur(12px); z-index: 10; border: 1.5px solid rgba(157, 0, 255, 0.6); }
+        h1 { font-family: 'Playfair Display', serif; color: #d1a3ff; font-size: 30px; margin-bottom: 10px; text-shadow: 0 0 12px rgba(209, 163, 255, 0.6); }
+        .instruction { color: #bfa3df; font-size: 13.5px; margin-bottom: 25px; line-height: 1.5; }
+        
+        /* Fixed Aspect Ratio Container for Responsive Image */
+        .bedroom-scene{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+.bedroom-scene img{
+    width:100%;
+    display:block;
+    border-radius:20px;
+    border:2px solid #9d00ff;
+    user-select:none;
+    pointer-events:none;
+}
+
+.click-trigger{
+    position:absolute;
+    cursor:pointer;
+    z-index:100;
+    background:rgba(255,255,255,0.01);
+}
+
+/* Debug ke liye */
+.click-trigger:hover{
+    background:rgba(157,0,255,.25);
+    border:2px solid #ff4da6;
+}
+        
+        /* Percentage-based Highly Accurate Hotspots */
+        .click-trigger { 
+            position: absolute; 
+            cursor: pointer; 
+            background: rgba(255, 255, 255, 0); 
+            transition: transform 0.2s ease; 
+            z-index: 20; 
+        }
+        .click-trigger:hover { 
+            transform: scale(1.1); 
+            background: rgba(157, 0, 255, 0.15); 
+            border: 1px solid rgba(157, 0, 255, 0.4);
+            border-radius: 8px; 
+        }
+        
+        /* Adjusting positions based on standard 2D room layouts */
+        .hotspot-moon { top: 8%; left: 6%; width: 18%; height: 25%; border-radius: 50%; }
+        .hotspot-rose { top: 10%; right: 8%; width: 14%; height: 18%; }
+        .hotspot-lamp { top: 35%; left: 32%; width: 13%; height: 30%; }
+        .hotspot-pet { bottom: 35%; right: 20%; width: 15%; height: 18%; }
+        .hotspot-laptop { bottom: 20%; left: 12%; width: 20%; height: 25%; }
+        .hotspot-coffee { bottom: 22%; left: 35%; width: 12%; height: 18%; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+        .hotspot-bed { bottom: 5%; right: 5%; width: 45%; height: 40%; }
+
+        #secretDisplay { min-height: 50px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #ff758f; margin-bottom: 30px; display: flex; justify-content: center; align-items: center; text-shadow: 0 0 8px rgba(255, 117, 143, 0.4); padding: 12px 15px; background: rgba(255, 255, 255, 0.04); border-radius: 12px; border: 1px solid rgba(255, 117, 143, 0.15); }
+        .love-section-title { font-family: 'Playfair Display', serif; font-size: 19px; color: #ff758f; margin: 25px 0 12px 0; display: flex; align-items: center; justify-content: center; gap: 8px; text-shadow: 0 0 5px rgba(255, 117, 143, 0.3); }
+        .timeline { text-align: left; background: rgba(255, 255, 255, 0.02); padding: 15px; border-radius: 15px; border-left: 3px solid #ff477e; margin-bottom: 25px; }
+        .timeline-item { margin-bottom: 10px; font-size: 13px; color: #e0d5f0; line-height: 1.4; }
+        .timeline-item b { color: #d1a3ff; }
+        .special-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
+        .special-card { background: rgba(157, 0, 255, 0.1); border: 1px solid rgba(157, 0, 255, 0.2); padding: 14px; border-radius: 12px; text-align: left; transition: all 0.3s ease; }
+        .special-card:hover { background: rgba(157, 0, 255, 0.15); border-color: #ff477e; }
+        .special-card h4 { font-size: 14px; color: #ff758f; margin-bottom: 4px; }
+        .special-card p { font-size: 12.5px; color: #bfa3df; line-height: 1.4; }
+        .promise-box { background: linear-gradient(135deg, rgba(255, 71, 126, 0.1), rgba(157, 0, 255, 0.1)); border: 1px dashed #ff477e; padding: 15px; border-radius: 15px; font-style: italic; font-size: 13.5px; color: #fff; margin-bottom: 30px; line-height: 1.5; }
+        
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(8, 1, 20, 0.85); z-index: 100; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+        .popup-box { background: #fff2f5; color: #210042; padding: 25px; border-radius: 20px; max-width: 380px; width: 85%; text-align: center; border: 3px solid #ff477e; box-shadow: 0 10px 30px rgba(255, 71, 126, 0.4); animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes popUp { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .popup-box h2 { font-family: 'Playfair Display', serif; color: #ff477e; margin-bottom: 12px; font-size: 22px; }
+        .popup-box p { color: #3d3d3d; font-size: 14px; line-height: 1.6; margin-bottom: 18px; font-style: italic; max-height: 300px; overflow-y: auto; text-align: left; padding-right: 5px; }
+        .close-btn { background: linear-gradient(45deg, #ff477e, #ff0a54); color: white; border: none; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; display: inline-block; box-shadow: 0 4px 12px rgba(255, 10, 84, 0.3); }
+        .buttons { display: flex; justify-content: center; gap: 20px; position: relative; height: 50px; align-items: center; margin-top: 15px; }
+        button.action-btn { padding: 12px 35px; font-size: 16px; font-weight: 600; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-family: 'Poppins', sans-serif; }
+        #yesBtn { background: linear-gradient(45deg, #9d00ff, #ff0a54); color: white; box-shadow: 0 5px 20px rgba(157, 0, 255, 0.5); }
+        #noBtn { background-color: #250942; color: #bfa3df; border: 1px solid rgba(157, 0, 255, 0.2); }
+        .heart { position: absolute; color: #ff477e; font-size: 20px; animation: float 4.5s linear infinite; opacity: 0; bottom: -20px; z-index: 99; }
+        @keyframes float { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
+        .music-badge { position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.08); padding: 5px 12px; border-radius: 20px; font-size: 11px; color: #d1a3ff; border: 1px solid rgba(209, 163, 255, 0.2); }
+        .sticker-img { width: 140px; height: 140px; margin: 15px auto; display: block; border-radius: 15px; }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-badge">🎵 Until I Found You</div>
+    <div id="hearts-container"></div>
+
+    <div class="container" id="mainBox">
+        <h1>Hey Ayushi! ✨</h1>
+        <p class="instruction">This is dedicated entirely to you. Maine coding sirf tere liye seekhi hai, aur is baar reject kia to pyar se gaaliya khaegi :) . Aaj kal baatein thodi kam ho paati hain, par dono ke beech me pyar rahega to pehle se bhi accha outcome aaega (btw u r cutest nigga )! 😉❤️</p>
+
+        <div class="bedroom-scene">
+
+            <img src="watermarked_img_18163940751987005597.png" alt="room">
+        
+            <div class="click-trigger hotspot-moon" onclick="showPopup('moon')"></div>
+            <div class="click-trigger hotspot-lamp" onclick="showPopup('lamp')"></div>
+            <div class="click-trigger hotspot-bed" onclick="showPopup('bed')"></div>
+            <div class="click-trigger hotspot-pet" onclick="showPopup('pet')"></div>
+            <div class="click-trigger hotspot-laptop" onclick="showPopup('laptop')"></div>
+            <div class="click-trigger hotspot-coffee" onclick="showPopup('coffee')"></div>
+            <div class="click-trigger hotspot-rose" onclick="showPopup('rose')"></div>
+        
+        </div>
+
+        <div id="secretDisplay">✨ Tap on objects inside the room to explore...</div>
+        
+
+        <div class="love-section-title">✨ Why You're So Special To Me</div>
+        <div class="special-grid">
+            <div class="special-card">
+                <h4>Purest Feelings ❤️</h4>
+                <p>Tujhse baat start karne ke baad mujhe realize hua ki true attachment kya hoti hai. Distance chahe jitna ho, main genuinely tujhse bohot zyada connected feel karta hu.</p>
+            </div>
+            <div class="special-card">
+                <h4>Utmost Respect & Love 🤝</h4>
+                <p>U are my first priority and i will never ever give u a chance to complain bout me !</p>
+            </div>
+        </div>
+
+        <div class="love-section-title">🤝 A Small Promise To You</div>
+        <div class="promise-box">
+            "umhm love u nigga 
+            I will never hurt u nd never reply late 
+            I will always be polite to u 
+            I will love u more thn me 
+            Ab kya jaan legi?! ❤️"
+        </div>
+
+        <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: #d1a3ff; font-weight: bold; margin-bottom: 15px;">
+            So Ayushi... Do you like me too? 😊
+        </p>
+        
+        <div class="buttons">
+            <button id="yesBtn" class="action-btn" onclick="celebrate()">Yes! ❤️</button>
+            <button id="noBtn" class="action-btn" onmouseover="moveButton()" onclick="triggerNoReaction()">No 🥺</button>
+        </div>
+    </div>
+
+    <div class="modal" id="customModal">
+        <div class="popup-box">
+            <h2 id="modalTitle">Secret Element ✉️</h2>
+            <p id="modalContent">Message goes here...</p>
+            <button class="close-btn" onclick="closePopup()">Close ❤️</button>
+        </div>
+    </div>
+
+    <script>
+        const roomFlirtLines = {
+            bed: { title: "My Cozy Bed 🛏️", line: "“maybe we both in ts in one blankett 👉👈”" },
+            lamp: { title: "The Lamp 💡", line: "“lamp se zyada bright to tu krti h meko  ✨”" },
+            moon: { title: "The Bright Moon 🌙", line: "“Khidki se dikhne wala chand bhi kaafi cool lagta hai, but u hit differ nigga. ❤️”" },
+            pet: {
+    title: "My Cute Cat 🐱",
+    line: "Look! ye bilauta bhi bolta (message aya kya uska)! 🥰"
+},
+            coffee: { title: "Our Future Coffee Date ☕", line: "“Hum abhi tak face-to-face nahi mile hain, I know. Par maine ek perfect dream date plan kar rakha hai. Jab hum pehli baar milenge, toh dher saari baatein karenge aur coffee piyenge firr toh tu maan hi jaegi maybe ! 😉✨”" },
+            rose: { title: "A Red Rose For You 🌹", line: "“Ye rose special tere liye, Tere samne toh ye rose bhi thoda sharma jata hai. Aur ye kabhi murjhayega nahi kyunki isme meri feelings hain hehe ! 😉”" },
+            laptop: { title: "My Secret Letter 💻✉️", line: "<b>Dearest Ayushi,</b><br><br>Finally tu ne laptop open kar hi liya! <br><br>Hum online mile, par mujhe sach me nahi pata tha me tere piche us kutte ki tarah lag jaunga jo tere piche pehele roz lgta tha :) . Pehle toh laga normal dosti hai, tere message padhte padhte wait krne laga ki tera message aaega , tab samajh aaya ki matter serious hai! <br><br>Teri voice, tera baatein karne ka tareeka, . main wahi dher ho jata hu. ❤️<br><br>Honestly Ayushi, tu bohot special hai mere liye, baaki ladkiyo se baat krta hu tho but i love u till now . Main humesha teri respect karunga, humesha tujhe hasata rahunga, aur har ek situation me tera saath dunga.<br><br>I really, really like you, Ayushi. You are amazingggggggg! ❤️" }
+        };
+
+        function startMusic() {
+            const audio = document.getElementById('bgMusic');
+            if (audio.paused) {
+                audio.play().catch(e => console.log("Audio playing..."));
+            }
+        }
+
+        function showPopup(item) {
+            startMusic();
+            const modal = document.getElementById('customModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            title.innerHTML = roomFlirtLines[item].title;
+            content.innerHTML = roomFlirtLines[item].line;
+            modal.style.display = 'flex';
+            document.getElementById('secretDisplay').innerHTML = `“Last explored: ${roomFlirtLines[item].title} 😉”`;
+        }
+        
+        function closePopup() { document.getElementById('customModal').style.display = 'none'; }
+        window.addEventListener('click', startMusic, { once: true });
+
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 80);
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = `${Math.max(10, Math.min(x, window.innerWidth - 140))}px`;
+            noBtn.style.top = `${Math.max(10, Math.min(y, window.innerHeight - 60))}px`;
+        }
+
+        function triggerNoReaction() {
+            moveButton();
+            document.getElementById('secretDisplay').innerHTML = "“Hey! 'No' click karna bilkul allowed nahi hai Ayushi! 😉❌”";
+        }
+
+        function celebrate() {
+            startMusic();
+            const mainBox = document.getElementById('mainBox');
+            mainBox.innerHTML = `
+                <h1 style="font-family: 'Playfair Display', serif; font-size: 34px; margin-bottom: 15px; color: #d1a3ff;">I KNEW IT! 🥰🎉</h1>
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzFydmVvbWM2NWZseXZ5bWx1amxucXJudmNqZXgxa29wdG1xdWkxaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif" class="sticker-img" alt="Cat Kissing Camera">
+                <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; font-weight: bold; color: #ff758f; margin-bottom: 15px;">I LOVE YOU TOO! ❤️</p>
+                <p style="font-size: 15px; color: #e0d5f0; line-height: 1.6;">Hum jald hi face-to-face milenge, dher saari baatein karenge, aur ek pyaari si coffee date par jayenge. Ye hamari is beautiful digital-to-real story ki sabse pyaari shuruat hai. Chalo, ab jaldi se mujhe DM me iska screenshot bhejo! 😉</p>
+            `;
+            for (let i = 0; i < 75; i++) { setTimeout(createHeart, i * 40); }
+        }
+
+        function createHeart() {
+            const container = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+            container.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 350);
+        document.querySelectorAll(".click-trigger").forEach(el=>{
+    el.addEventListener("click",function(e){
+        e.stopPropagation();
+
+        if(this.classList.contains("hotspot-moon")) showPopup("moon");
+        if(this.classList.contains("hotspot-lamp")) showPopup("lamp");
+        if(this.classList.contains("hotspot-bed")) showPopup("bed");
+        if(this.classList.contains("hotspot-pet")) showPopup("pet");
+        if(this.classList.contains("hotspot-laptop")) showPopup("laptop");
+        if(this.classList.contains("hotspot-coffee")) showPopup("coffee");
+        if(this.classList.contains("hotspot-rose")) showPopup("rose");
+    });
+});
+    </script>
+</body>
+</html>
