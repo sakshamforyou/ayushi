@@ -222,7 +222,7 @@
                 <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; font-weight: bold; color: #ff758f; margin-bottom: 15px;">I LOVE YOU TOO! ❤️</p>
                 <p style="font-size: 15px; color: #e0d5f0; line-height: 1.6;">Hum jald hi face-to-face milenge, dher saari baatein karenge, aur ek pyaari si coffee date par jayenge. Ye hamari is beautiful digital-to-real story ki sabse pyaari shuruat hai. Chalo, ab jaldi se mujhe DM me iska screenshot bhejo! 😉</p>
             `;
-            for (let i = 0; i < 75; i++) { setTimeout(createHeart, i * 40); }
+            for (let i = 0; i < 30; i++) { setTimeout(createHeart, i * 60); }
         }
 
         function createHeart() {
@@ -236,7 +236,7 @@
             container.appendChild(heart);
             setTimeout(() => { heart.remove(); }, 5000);
         }
-        setInterval(createHeart, 350);
+        setInterval(createHeart, 1000);
         document.querySelectorAll(".click-trigger").forEach(el=>{
     el.addEventListener("click",function(e){
         e.stopPropagation();
